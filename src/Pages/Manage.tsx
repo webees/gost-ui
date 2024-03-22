@@ -31,10 +31,9 @@ import { download, jsonFormat } from "../uitls";
 import { MonacoEditor } from "../uitls/userMonacoWorker";
 import Ctx from "../uitls/ctx";
 import * as API from "../api";
-import ListCard from "../components/ListCard";
+import ListCard, { ProCard } from "../components/ListCard";
 import ChainCard from "../components/ListCard/Chains";
 import ServiceCard from "../components/ListCard/Services";
-import { ProCard } from "@ant-design/pro-components";
 import HopsCard from "../components/ListCard/Hops";
 import { fixOldCacheConfig } from "../api/local";
 import { configEvent } from "../uitls/events";
@@ -275,13 +274,13 @@ const Manage = () => {
               <ProCard boxShadow title="限速限流">
                 <Row gutter={[16, 16]}>
                   <Col {...colSpan1}>
-                    <ListCard module="limiter" bordered />
+                    <ListCard module="limiter" bordered boxShadow={false} />
                   </Col>
                   <Col {...colSpan1}>
-                    <ListCard module="rlimiter" bordered />
+                    <ListCard module="rlimiter" bordered boxShadow={false} />
                   </Col>
                   <Col {...colSpan1}>
-                    <ListCard module="climiter" bordered />
+                    <ListCard module="climiter" bordered boxShadow={false} />
                   </Col>
                 </Row>
               </ProCard>

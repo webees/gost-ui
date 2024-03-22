@@ -22,7 +22,7 @@ export default defineConfig(({ command, mode }) => {
             monaco: ["monaco-editor"],
             antd: ["antd"],
             // 将组件库的代码打包
-            "ant-design": ["@ant-design/icons", "@ant-design/pro-components"],
+            // "ant-design": ["@ant-design/icons", "@ant-design/pro-components"],
           },
         },
       },
@@ -30,7 +30,7 @@ export default defineConfig(({ command, mode }) => {
   }
 
   if (mode === "analyzer") {
-    config.plugins.unshift(analyzer() as any);
+    config.plugins.push(analyzer());
     config.build.sourcemap="hidden";
   }
 
