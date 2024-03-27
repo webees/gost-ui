@@ -1,18 +1,14 @@
 import { defineConfig, UserConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { analyzer } from "vite-bundle-analyzer";
-import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const config: UserConfig = {
     base: "./",
-    plugins: [react(), viteStaticCopy({ targets: [
-      {
-        src: 'node_modules/monaco-editor/min',
-        dest: 'monaco-editor'
-      }
-    ]})],
+    plugins: [
+      react()
+    ],
   };
 
   if (mode === "development") {
@@ -37,7 +33,7 @@ export default defineConfig(({ command, mode }) => {
 
   if (mode === "analyzer") {
     config.plugins.push(analyzer());
-    config.build.sourcemap="hidden";
+    config.build.sourcemap = "hidden";
   }
 
   return config;

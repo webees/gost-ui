@@ -38,40 +38,40 @@ self.MonacoEnvironment = {
 // };
 // var model = getModel("");
 
-// monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
-//   allowComments: true,
-//   trailingCommas: "warning",
-//   validate: true,
-//   // json 数据格式测试
-//   schemas: [
-//     {
-//       uri: "http://gost/config.json", // id of the first schema
-//       fileMatch: [modelUri.toString()], // associate with our model
-//       schema: {
-//         type: "object",
-//         properties: {
-//           p1: {
-//             enum: ["v1", "v2"],
-//           },
-//           p2: {
-//             $ref: "http://myserver/bar-schema.json", // reference the second schema
-//           },
-//         },
-//       },
-//     },
-//     {
-//       uri: "http://myserver/bar-schema.json", // id of the second schema
-//       schema: {
-//         type: "object",
-//         properties: {
-//           q1: {
-//             enum: ["x1", "x2"],
-//           },
-//         },
-//       },
-//     },
-//   ],
-// });
+monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+  allowComments: true,
+  trailingCommas: "warning",
+  validate: true,
+  // json 数据格式测试
+  // schemas: [
+  //   {
+  //     uri: "http://gost/config.json", // id of the first schema
+  //     fileMatch: [modelUri.toString()], // associate with our model
+  //     schema: {
+  //       type: "object",
+  //       properties: {
+  //         p1: {
+  //           enum: ["v1", "v2"],
+  //         },
+  //         p2: {
+  //           $ref: "http://myserver/bar-schema.json", // reference the second schema
+  //         },
+  //       },
+  //     },
+  //   },
+  //   {
+  //     uri: "http://myserver/bar-schema.json", // id of the second schema
+  //     schema: {
+  //       type: "object",
+  //       properties: {
+  //         q1: {
+  //           enum: ["x1", "x2"],
+  //         },
+  //       },
+  //     },
+  //   },
+  // ],
+});
 
 monaco.languages.typescript.typescriptDefaults.setEagerModelSync(true);
 
