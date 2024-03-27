@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="manifest" href="/manifest.json">
+    <script src="/monaco-editor/min/vs/loader.js"></script>
+    <script>
+      (function () {
+        require.config({ paths: { vs: '/monaco-editor/min/vs' } });
+        require.config({
+          'vs/nls': {
+            availableLanguages: {
+              '*': 'zh-cn'
+            }
+          }
+        });
+        window.monacoIsReady = new Promise((resolve, reject) => {
+          require(['vs/editor/editor.main'], function () {
+            resolve(monaco)
+          })
+        })
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
